@@ -26,6 +26,7 @@ public class BuildingAPI {
 	public List<BuildingDTO> getBuilding( @RequestParam(value="name", required = false) String name,
 							@RequestParam(value="districtid", required = false) Long districtId) {	
 		List<BuildingDTO> list = buildingService.findAll(name, districtId);
+		System.out.println("JDBC");
 		return list;
 	}
 	
