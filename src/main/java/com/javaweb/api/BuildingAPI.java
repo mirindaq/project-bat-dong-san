@@ -1,6 +1,7 @@
 package com.javaweb.api;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,31 +23,21 @@ public class BuildingAPI {
 	@Autowired
 	private BuildingService buildingService;
 	
+//	@GetMapping("/api/building")
+//	public List<BuildingDTO> getBuilding( @RequestParam(value="name", required = false) String name,
+//							@RequestParam(value="districtid", required = false) Long districtId) {	
+//		List<BuildingDTO> list = buildingService.findAll(name, districtId);
+//		System.out.println("JDBC");
+//		return list;
+//	}
+	
 	@GetMapping("/api/building")
-	public List<BuildingDTO> getBuilding( @RequestParam(value="name", required = false) String name,
-							@RequestParam(value="districtid", required = false) Long districtId) {	
-		List<BuildingDTO> list = buildingService.findAll(name, districtId);
+	public List<BuildingDTO> getBuilding3( @RequestParam Map<String, Object> params,
+											@RequestParam(name="typeCode", required = false) List<String> typeCode) {
+		List<BuildingDTO> list = buildingService.findAll(params, typeCode);
 		System.out.println("JDBC");
 		return list;
 	}
-	
-//	@GetMapping("/api/building")
-//	public List<BuildingDTO> getBuilding3( @RequestParam Map<String, Object> params) {
-//		List<BuildingDTO> list = new ArrayList<BuildingDTO>();
-//		BuildingDTO bto1= new BuildingDTO();
-//		BuildingDTO bto2= new BuildingDTO();
-//		bto1.setName("name1");
-//		bto1.setNumberOfBasement(4);
-//		bto1.setStreet("street1");
-//		bto1.setWard("ward1");
-//		bto2.setName("name2");
-//		bto2.setNumberOfBasement(5);
-//		bto2.setStreet("street2");
-//		bto2.setWard("ward2");
-//		list.add(bto1);
-//		list.add(bto2);
-//		return list;
-//	}
 	
 	@PostMapping("/api/building")
 	public Object getBuilding2( @RequestBody BuildingDTO buildingDTO) {
