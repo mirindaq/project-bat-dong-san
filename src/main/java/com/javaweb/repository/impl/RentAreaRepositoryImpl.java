@@ -13,7 +13,7 @@ import com.javaweb.repository.RentAreaRepository;
 import com.javaweb.repository.entity.BuildingEntity;
 import com.javaweb.repository.entity.RentAreaEntity;
 
-import utils.ConnectJDBCUtil;
+import com.javaweb.utils.ConnectJDBCUtil;
 
 @Repository
 public class RentAreaRepositoryImpl implements RentAreaRepository {

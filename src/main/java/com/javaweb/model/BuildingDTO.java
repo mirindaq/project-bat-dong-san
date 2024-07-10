@@ -1,7 +1,6 @@
 package com.javaweb.model;
 
 public class BuildingDTO {
-	private Long id;
 	private String name;
 	private Integer numberOfBasement;
 	private String address;
@@ -13,13 +12,6 @@ public class BuildingDTO {
 	private Integer emptyArea;
 	private Double brokerageFee;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
