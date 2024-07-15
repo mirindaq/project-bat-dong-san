@@ -20,6 +20,7 @@ public class BuildingSearchBuilder {
 	private String managerName;
 	private String managerPhoneNumber;
 	private Long staffId;
+	private Long districtId;
 	private List<String> typeCode = new ArrayList<String>();
 	
 	private BuildingSearchBuilder(Builder builder ) {
@@ -37,6 +38,7 @@ public class BuildingSearchBuilder {
 		this.managerPhoneNumber = builder.managerPhoneNumber;
 		this.staffId = builder.staffId;
 		this.typeCode = builder.typeCode;
+		this.districtId = builder.districtId;
 	}
 
 	public String getName() {
@@ -69,6 +71,10 @@ public class BuildingSearchBuilder {
 
 	public String getDirection() {
 		return direction;
+	}
+
+	public Long getDistrictId() {
+		return districtId;
 	}
 
 	public Integer getAreaFrom() {
@@ -109,6 +115,7 @@ public class BuildingSearchBuilder {
 		private String managerName;
 		private String managerPhoneNumber;
 		private Long staffId;
+		private Long districtId;
 		private List<String> typeCode = new ArrayList<String>();
 		
 		public BuildingSearchBuilder build() {
@@ -117,6 +124,11 @@ public class BuildingSearchBuilder {
 
 		public Builder setName(String name) {
 			this.name = name;
+			return this;
+		}
+		
+		public Builder setDistrictId(Long districtId) {
+			this.districtId = districtId;
 			return this;
 		}
 
