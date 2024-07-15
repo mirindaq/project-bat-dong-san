@@ -9,6 +9,5 @@ import com.javaweb.repository.custom.BuildingRepositoryCustom;
 import com.javaweb.repository.entity.BuildingEntity;
 
 public interface BuildingRepository extends JpaRepository<BuildingEntity, Long>, BuildingRepositoryCustom {
-	List<BuildingEntity> findAll(BuildingSearchBuilder builderConverter);
 	
 }
